@@ -47,13 +47,10 @@ SELECT SUM(cantidad) FROM INSCRITOS;
 SELECT MIN(fecha) FROM INSCRITOS; 
 
 --Muestra los registros de mayor antigüedad // Junto al dato anterior obtenemos que Blog y Pagina son los registros de mayor antigüedad--
-SELECT cantidad, fecha, fuente FROM INSCRITOS WHERE fecha = '2021-01-01'; 
+SELECT fecha, fuente FROM INSCRITOS WHERE fecha = '2021-01-01'; 
 
 --4.Muestra la suma de inscritos por día // Obtendríamos fecha e inscritos por día siendo; "2021-02-01" = 120 |"2021-08-01" = 182 |"2021-05-01"= 88 |"2021-04-01" = 93 |"2021-06-01" = 30 |"2021-07-01" = 58 |"2021-03-01" = 103 |"2021-01-01" = 100--
 SELECT fecha, SUM(cantidad) FROM INSCRITOS GROUP BY fecha; 
 
---5.Muestra la suma de inscritos por dia de forma descendente // Se previsualiza la misma tabla de antes pero está ordenada de forma descendente mostrandonos que el día "2021-08-01" tuvo la mayor cantidad de inscritos, siendo un total de 182--
-SELECT fecha, SUM(cantidad) FROM INSCRITOS GROUP BY fecha ORDER BY SUM(cantidad)DESC; 
-
-
-
+--5.Muestra el día que tiene más inscritos// Se previsualiza la misma tabla de antes pero está ordenada de forma descendente y con límite de 1 mostrandonos que el día "2021-08-01" tuvo la mayor cantidad de inscritos, siendo un total de 182--
+SELECT fecha, SUM(cantidad) FROM INSCRITOS GROUP BY fecha ORDER BY SUM(cantidad)DESC limit 1;
