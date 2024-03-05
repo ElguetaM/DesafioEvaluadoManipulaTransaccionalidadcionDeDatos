@@ -37,7 +37,6 @@ VALUES ( 99, '01/08/2021', 'Página' );
 --Visualizar tabla con los datos actuales--
 SELECT * FROM INSCRITOS;
 
-
 --1.Contar total de registros // Se previsualiza un total de 16 registros--
 SELECT COUNT(*) FROM INSCRITOS; 
 
